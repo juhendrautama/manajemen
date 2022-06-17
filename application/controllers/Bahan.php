@@ -9,6 +9,7 @@ class Bahan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_bahan');
+		$this->load->model('M_pengadaan');
 		$this->load->library("session");
 		$this->sessionku();
 	}
@@ -38,7 +39,7 @@ class Bahan extends CI_Controller {
 	}
 	public function tambah()
 	{
-
+		$data['kode_pengadaan2']=$this->M_pengadaan->buat_kode2();
 		$this->load->model('M_bahan');
 		$this->load->model('M_labor');
 		$data['labor'] = $this->M_labor->get_lab()->result();

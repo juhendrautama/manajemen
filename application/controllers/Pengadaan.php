@@ -91,7 +91,7 @@ class Pengadaan extends CI_Controller {
 		if(isset($_POST['proses'])){
 			$hasil1=$this->M_pengadaan->Simpan_bahan_baru();
 			if ($hasil1==true) {
-				$kode_pengadaan=$this->input->post('kode_pengadaan');
+				$kode_pengadaan=$this->input->post('kode_pengadaan2');
 				$ambil_data=$this->M_pengadaan->ambil_bahan($kode_pengadaan)->row();
 				 $id_bahan=$ambil_data->id_bahan;
 				 $hasil=$this->M_pengadaan->Simpan_pengadaan_bahan_baru($id_bahan);
@@ -128,7 +128,149 @@ class Pengadaan extends CI_Controller {
 		
 	}
 
+//ubah data alat baru
+public function Ubah_pengadaan_alat_baru(){
+	if(isset($_POST['proses'])){
+		$hasil1=$this->M_pengadaan->Ubah_alat_baru();
+		if ($hasil1==true){
+			 $id_alat=$this->input->post('id_alat');
+			 $hasil=$this->M_pengadaan->Ubah_pengadaan_alat_baru($id_alat);
+			if ($hasil){ ?>
+			<script type="text/javascript">
+					alert('Data Di Ubah');window.location="<?php echo base_url() ?>Pengadaan";
+				</script>
+			<?php }
+			
+			
+		}else{
+			echo "DATA GAGAL DI SIMPAN 2";
+		}
+	}else{
+			echo "DATA GAGAL DI SIMPAN 1";
+		}
+	
+}	
+//ubah data alat baru
 
+//hapus data alat baru
+public function Hapus_pengadaan_alat_baru($id_alat){
+		$hasil1=$this->M_pengadaan->Hapus_alat_baru($id_alat);
+		if ($hasil1==true){
+			 $hasil=$this->M_pengadaan->Hapus_pengadaan_alat_baru($id_alat);
+			if ($hasil){ ?>
+			<script type="text/javascript">
+					alert('Data Di Hapus');window.location="<?php echo base_url() ?>Pengadaan";
+				</script>
+			<?php }
+			
+			
+		}else{
+			echo "DATA GAGAL DI hapus";
+		}
+	
+}
+//hapus data alat baru
+
+//ubah data alat lama
+public function Ubah_pengadaan_alat_lama(){
+	if(isset($_POST['proses'])){
+	
+			 $hasil=$this->M_pengadaan->Ubah_pengadaan_alat_lama();
+			if ($hasil){ ?>
+			<script type="text/javascript">
+					alert('Data Ubah');window.location="<?php echo base_url() ?>Pengadaan";
+				</script>
+			<?php }
+			
+			
+		}else{
+			echo "DATA GAGAL DI SIMPAN 2";
+		}
+	}		
+//ubah data alat lama
+
+//hapus pengadaan alat lama
+public function Hapus_pengadaan_alat_lama($id_pengadaan,$id_alat){
+			 $hasil=$this->M_pengadaan->Hapus_pengadaan_alat_lama($id_pengadaan,$id_alat);
+			if ($hasil){ ?>
+			<script type="text/javascript">
+					alert('Data Dihapus');window.location="<?php echo base_url() ?>Pengadaan";
+				</script>
+			<?php }
+	}	
+//hapus pengadaan alat lama
+
+
+//ubah bahan baru
+public function Ubah_pengadaan_bahan_baru(){
+	if(isset($_POST['proses'])){
+		$hasil1=$this->M_pengadaan->Ubah_bahan_baru();
+		if ($hasil1==true){
+			 $id_bahan=$this->input->post('id_bahan');
+			 $hasil=$this->M_pengadaan->Ubah_pengadaan_bahan_baru($id_bahan);
+			if ($hasil){ ?>
+			<script type="text/javascript">
+					alert('Data Di Ubah');window.location="<?php echo base_url() ?>Pengadaan";
+				</script>
+			<?php }
+			
+			
+		}else{
+			echo "DATA GAGAL DI SIMPAN 2";
+		}
+	}else{
+			echo "DATA GAGAL DI SIMPAN 1";
+		}
+	
+}	
+//ubah bahan baru	
+//ubah data bahan lama
+public function Ubah_pengadaan_bahan_lama(){
+	if(isset($_POST['proses'])){
+	
+			 $hasil=$this->M_pengadaan->Ubah_pengadaan_bahan_lama();
+			if ($hasil){ ?>
+			<script type="text/javascript">
+					alert('Data Ubah');window.location="<?php echo base_url() ?>Pengadaan";
+				</script>
+			<?php }
+			
+			
+		}else{
+			echo "DATA GAGAL DI SIMPAN 2";
+		}
+	}		
+//ubah data bahan lama
+
+//hapus data bahan baru
+public function Hapus_pengadaan_bahan_baru($id_bahan){
+	$hasil1=$this->M_pengadaan->Hapus_bahan_baru($id_bahan);
+	if ($hasil1==true){
+		 $hasil=$this->M_pengadaan->Hapus_pengadaan_bahan_baru($id_bahan);
+		if ($hasil){ ?>
+		<script type="text/javascript">
+				alert('Data Di Hapus');window.location="<?php echo base_url() ?>Pengadaan";
+			</script>
+		<?php }
+		
+		
+	}else{
+		echo "DATA GAGAL DI hapus";
+	}
+
+}
+//hapus data bahan baru
+
+//hapus bahan lama
+public function Hapus_pengadaan_bahan_lama($id_alat){
+	$hasil=$this->M_pengadaan->Hapus_pengadaan_bahan_lama($id_alat);
+   if ($hasil){ ?>
+   <script type="text/javascript">
+		   alert('Data Dihapus');window.location="<?php echo base_url() ?>Pengadaan";
+	   </script>
+   <?php }
+}	
+//hapus bahan lama
 
 
 }

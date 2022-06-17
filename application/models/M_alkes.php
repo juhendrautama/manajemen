@@ -3,11 +3,24 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_alkes extends CI_Model {
+//laporan
+function alkes_join_laporan(){
+	$tgl1=$this->db->escape_str($this->input->post('tgl1'));
+	$tgl2=$this->db->escape_str($this->input->post('tgl2'));
+	$sql=$this->db->query("SELECT * FROM tbl_alkes JOIN tbl_lab ON tbl_alkes.id_lab = tbl_lab.id_lab WHERE tgl_peroleh BETWEEN '$tgl1' AND '$tgl2' and status='Sesuai' ORDER BY tbl_alkes.id_alat DESC");
+	return $sql;
+}
+function cetak_laporan($tgl1,$tgl2){
+	$sql=$this->db->query("SELECT * FROM tbl_alkes JOIN tbl_lab ON tbl_alkes.id_lab = tbl_lab.id_lab WHERE tgl_peroleh BETWEEN '$tgl1' AND '$tgl2' and status='Sesuai' ORDER BY tbl_alkes.id_alat DESC");
+	return $sql;
+}
+//laporan
+
 
 	public function get_alkes_join()
 	{
 			
-				$query = $this->db->query('SELECT * FROM tbl_alkes JOIN tbl_lab ON tbl_alkes.id_lab = tbl_lab.id_lab ORDER BY tbl_alkes.id_alat DESC');
+				$query = $this->db->query("SELECT * FROM tbl_alkes JOIN tbl_lab ON tbl_alkes.id_lab = tbl_lab.id_lab where status='Sesuai' ORDER BY tbl_alkes.id_alat DESC");
 				return $query;
 	}
 
@@ -27,7 +40,7 @@ class M_alkes extends CI_Model {
 			'ukuran' => $this->input->post('ukuran'),
 			'tipe_merk'=>$this->input->post('tipe_merk'),
 			'keterangan_alkes'=>$this->input->post('keterangan_alkes'),
-
+			'status'=>'Sesuai',
 		);
 		$this->db->insert('tbl_alkes',$data);
 	}

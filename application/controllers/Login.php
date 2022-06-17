@@ -44,6 +44,8 @@ class Login extends CI_Controller {
 						redirect('../Dashboard');
 					}else if ($ok->level=='2') {
 						redirect('../Dashboard');
+					}else if ($ok->level=='3') {	
+						redirect('../Dashboard');
 					}
 			}else{
 

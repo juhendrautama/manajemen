@@ -43,12 +43,24 @@
 													$tot_now = $al->jumlah;
 													$this->db->where('id_alat', $al->id_alat);
 													$this->db->where('id_lab', $al->id_lab);
+													$this->db->where('status', 'Sesuai');
 													$query = $this->db->get('tbl_peminjaman');
 													if ($query->num_rows() > 0) {
 														$dipinjam = $query->row()->jumlah;
 													}
 													$sisa = $tot_now - $dipinjam;
-													echo $sisa;
+													
+													$id_alat=$al->id_alat;
+													$data_alat=$this->M_pengadaan->tampil_alat_alkes($id_alat)->row();
+													$jum_pengadaan='';
+													if(empty($data_alat->total_alat)){
+														$jum_pengadaan='0';
+
+													}else{
+														$jum_pengadaan=$data_alat->total_alat;
+													}
+													
+													echo $sisa+$jum_pengadaan;
 													?></td>
 													<td><?= $al->tgl_peroleh; ?></td>
 													<td><?= $al->keterangan_alkes; ?></td>

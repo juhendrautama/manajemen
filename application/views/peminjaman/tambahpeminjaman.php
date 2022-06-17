@@ -1,7 +1,7 @@
       
 					<div class="panel panel-default">
 						<div class="panel-heading" style="color:white;background: #3a6186;background: -webkit-linear-gradient(to right, #89253e, #3a6186);background: linear-gradient(to right, #483D8B, #00FFFF);">
-							<h3><strong>Input Data Peminjaman</strong> <a href="../peminjaman" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a></h3>
+							<h3><strong>Input Data Peminjaman</strong> <a href="peminjaman" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a></h3>
 						</div>
 						<div class="panel-body">
 							<?= form_open('simpanpeminjaman'); ?>
@@ -41,7 +41,7 @@
 							  	
 							    <div class="form-group">
 								<label>Status</label>
-								<input type="text" class="form-control" name="status" required placeholder="Tanggal">
+								<input type="text" readonly class="form-control" name="status" required value="Pemeriksaan">
 							  </div>						  
 							 
 							

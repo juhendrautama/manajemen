@@ -1,7 +1,7 @@
       
 					<div class="panel panel-default">
 						<div class="panel-heading" style="color:white;background: #3a6186;background: -webkit-linear-gradient(to right, #89253e, #3a6186);background: linear-gradient(to right, #483D8B, #00FFFF);">
-							<h3><strong>Edit Data Peminjaman</strong> <a href="../../../peminjaman" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a></h3>
+							<h3><strong>Edit Data Peminjaman</strong> <a href="peminjaman" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a></h3>
 						</div>
 						<div class="panel-body">
 						
@@ -27,20 +27,33 @@
 								<input type="text" hidden name="id_lab" value="<?php echo $id_lab; ?>">
 								<input type="text" readonly class="form-control" name="idab" required  value="<?php echo	$tampil_lab->nama_lab; ?>">
 							  </div>
-
+	  								<?php if($peminjaman->status=='Sesuai'){ ?>
 							  <div class="form-group">
+								<label>Jumlah</label>
+								<input readonly type="text" class="form-control" name="jumlah" required placeholder="Jumlah" value="<?= $peminjaman->jumlah;?>">
+							  </div>
+							  <?php }else{ ?>
+								<div class="form-group">
 								<label>Jumlah</label>
 								<input type="text" class="form-control" name="jumlah" required placeholder="Jumlah" value="<?= $peminjaman->jumlah;?>">
 							  </div>
+							  <?php } ?>
 
+							  <?php if($peminjaman->status=='Sesuai'){ ?>
 							  <div class="form-group">
+								<label>Tanggal</label>
+								<input readonly type="date" class="form-control" name="tgl" required placeholder="Tanggal" value="<?= $peminjaman->tgl;?>">
+							  </div>
+							  <?php }else{ ?>
+								<div class="form-group">
 								<label>Tanggal</label>
 								<input type="date" class="form-control" name="tgl" required placeholder="Tanggal" value="<?= $peminjaman->tgl;?>">
 							  </div>
+							  <?php } ?>
 							  	
 							    <div class="form-group">
 								<label>Status</label>
-								<input type="text" class="form-control" name="status" required placeholder="Status" value="<?= $peminjaman->status;?>">
+								<input readonly type="text" class="form-control" name="status" required placeholder="Status" value="<?= $peminjaman->status;?>">
 							  </div>						  
 							 
 							

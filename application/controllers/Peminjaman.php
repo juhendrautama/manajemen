@@ -85,6 +85,14 @@ class Peminjaman extends CI_Controller
 		$this->M_peminjaman->edit($id_peminjaman);
 		redirect(base_url('peminjaman'));
 	}
+
+	public function edit2($id_peminjaman)
+	{
+
+		$this->M_peminjaman->edit2($id_peminjaman);
+		redirect(base_url('peminjaman'));
+	}
+
 	public function hapus($id_peminjaman)
     {
         $this->M_peminjaman->hapus($id_peminjaman);

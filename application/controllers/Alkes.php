@@ -9,6 +9,7 @@ class Alkes extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_alkes');
+		$this->load->model('M_pengadaan');
 		$this->load->library("session");
 		$this->sessionku();
 	}
@@ -86,8 +87,23 @@ class Alkes extends CI_Controller {
 	}
 	public function hapus($id_alat)
     {
-        $this->M_alkes->hapus($id_alat);
-        redirect('alkes');
+		$data_alat=$this->M_pengadaan->tampil_alat_id_alat($id_alat)->row();
+		$id_alat=$data_alat->id_alat;
+		if(empty($id_alat)){
+			
+			$data_alat=$this->M_pengadaan->tampil_alat_id_alat($id_alat)->row();
+			$this->M_alkes->hapus($id_alat);
+        	redirect('alkes');
+		}else{
+			
+			$hasil=$this->M_pengadaan->Hapus_pengadaan_alat_baru($id_alat);
+			if ($hasil==true){ 
+				$this->M_alkes->hapus($id_alat);
+        		redirect('alkes');
+			 }
+			
+		}
+        
     }
 	
 }

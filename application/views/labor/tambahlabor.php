@@ -1,6 +1,6 @@
 <div class="panel panel-default">
 						<div class="panel-heading" style="color:white;background: #3a6186;background: -webkit-linear-gradient(to right, #89253e, #3a6186);background: linear-gradient(to right, #483D8B, #00FFFF);">
-							<h3><strong>Input Ruang Laboratoium</strong> <a href="" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a></h3>
+							<h3><strong>Input Ruang Laboratoium</strong> <a href="laboran" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a></h3>
 						</div>
 						<div class="panel-body">
 							<?= form_open('simpanlabor'); ?>
