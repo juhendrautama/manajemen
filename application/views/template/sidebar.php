@@ -66,7 +66,7 @@ background: linear-gradient(to right, #483D8B, #00FFFF); /* W3C, IE 10+/ Edge, F
 			 <li><a class="" href="laboran"><span class="">&nbsp;</span> Data Petugas Laboran</a></li>
 			 <li><a class="" href="bahan"><span class="">&nbsp;</span> Data Bahan Praktek</a></li>
 			 <li><a class="" href="pbahan"><span class="">&nbsp;</span> Data Transaksi Pemakaian &nbsp;&nbsp;Bahan</a></li>
-			 <li><a class="" href="musnah"><span class="">&nbsp;</span> Data Alat Musnah</a></li>
+			 
 			 <li><a class="" href="jadwal"><span class="">&nbsp;</span> Data Jadwal Praktek</a></li>
 			 <li><a class="" href="kegiatan"><span class="">&nbsp;</span> Data Kegiatan Laboratorium </a></li>
 			 <li><a class="" href="karya"><span class="">&nbsp;</span> Data Hasil Karya Laboratorium </a></li>
@@ -74,7 +74,7 @@ background: linear-gradient(to right, #483D8B, #00FFFF); /* W3C, IE 10+/ Edge, F
 				<li><a class="" href="alkes"><span class="">&nbsp;</span> Data Alat Kesehatan</a></li>	
 				<li><a class="" href="bahan"><span class="">&nbsp;</span> Data Bahan Praktek</a></li>
 				<li><a class="" href="pbahan"><span class="">&nbsp;</span> Data Transaksi Pemakaian &nbsp;&nbsp;Bahan</a></li>
-				<li><a class="" href="musnah"><span class="">&nbsp;</span> Data Alat Musnah</a></li>
+				
 			<?php } ?>	
 
 			</ul>
@@ -84,6 +84,7 @@ background: linear-gradient(to right, #483D8B, #00FFFF); /* W3C, IE 10+/ Edge, F
 			<?php if($user1=='1'){?>
 			<li><a href="peminjaman"><em class="fa fa-book fa-fw">&nbsp;</em> Peminjaman</a></li>
 			<li><a href="Pengadaan"><em class="fa fa-plus-circle fa-fw">&nbsp;</em> Pengadaan</a></li>
+			<li><a class="" href="musnah"><em class="fa fa-minus-circle fa-fw">&nbsp;</em> Data Alat Musnah</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-2">
 		   
 		   <em class="fa fa-database fa-fw">&nbsp;</em> Laporan <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span></a>
@@ -99,6 +100,7 @@ background: linear-gradient(to right, #483D8B, #00FFFF); /* W3C, IE 10+/ Edge, F
 			<?php }elseif($user1=='2'){ ?>	
 				<li><a href="peminjaman"><em class="fa fa-book fa-fw">&nbsp;</em> Peminjaman</a></li>
 				<li><a href="Pengadaan"><em class="fa fa-plus-circle fa-fw">&nbsp;</em> Pengadaan</a></li>
+				<li><a class="" href="musnah"><em class="fa fa-minus-circle fa-fw">&nbsp;</em> Data Alat Musnah</a></li>
 			<?php } ?>		
 			<li><a href="login/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
