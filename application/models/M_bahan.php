@@ -17,6 +17,13 @@ function cetak_laporan($tgl1,$tgl2){
 }
 //laporan
 
+	//panggil data pamakaian
+	public function tampil_alat_pakai_bahan($id_bahan){
+		$query = $this->db->query("SELECT sum(jumlah_pakai) as total_pemakain FROM  tbl_pemakaian_bahan where id_bahan='$id_bahan'");
+		return $query;
+		}
+	//panggil data pamakaian
+
 	public function get_bahan_join()
 	{
 			

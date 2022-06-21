@@ -60,7 +60,12 @@
 														$jum_pengadaan=$data_alat->total_alat;
 													}
 													
-													echo $sisa+$jum_pengadaan;
+	
+
+													echo $hasilakhir=$sisa+$jum_pengadaan;
+
+													
+													
 													?></td>
 													<td><?= $al->tgl_peroleh; ?></td>
 													<td><?= $al->keterangan_alkes; ?></td>

@@ -17,6 +17,8 @@ function cetak_laporan($tgl1,$tgl2){
 //laporan
 
 
+
+
 	public function get_alkes_join()
 	{
 			

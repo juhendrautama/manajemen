@@ -24,7 +24,7 @@
 											<th>Laboratorium</th>
 											<th>Bahan</th>
 											<th>Tanggal Pemakaian</th>
-											<th>Stok Awal</th>
+											<!-- <th>Stok Awal</th> -->
 											<th>Jumlah Pakai</th>
 											<th>Aksi</th>
 										</tr>
@@ -39,11 +39,11 @@
 													<td><?php echo $pb->nama_lab; ?></td>
 													<td><?php echo $pb->nama_bahan; ?></td>
 													<td><?php echo $pb->tgl_pemakaian; ?></td>
-													<td><?php echo $pb->stok_awal_bahan.' '.$pb->satuan ?></td>
+													<!-- <td><?php echo $pb->stok_awal_bahan.' '.$pb->satuan ?></td> -->
 													<td><?php echo $pb->jumlah_pakai.' '.$pb->satuan; ?></td>
 													<td>
 														<a title="Edit Data" href="<?= base_url('pbahan/to/edit/'.$pb->id_pemakaian); ?>" class="btn btn-success btn-sm">EDIT</a> 
-														<a title="Hapus Data" href="" onclick="return confirm('Hapus data ini..?');" class="btn btn-danger btn-sm">HAPUS</a>
+														<a title="Hapus Data" href="Pbahan/hapus/<?php echo $pb->id_pemakaian; ?>" onclick="return confirm('Hapus data ini..?');" class="btn btn-danger btn-sm">HAPUS</a>
 													</td>
 												</tr>
 							

@@ -25,6 +25,13 @@ class M_pbahan extends CI_Model {
 	}
 	//laporan
 
+	public function tampil_bahan_id($id_bahan){
+		$query = $this->db->query("SELECT * FROM tbl_bahan where id_bahan='$id_bahan'");
+		return $query;
+}
+
+
+
 	public function get_pbahan_join()
 	{
 			
@@ -85,4 +92,13 @@ class M_pbahan extends CI_Model {
 		$this->db->insert('tbl_pemakaian_bahan',$data);
 	
 	}
+
+	public function hapus($id_pemakaian)
+    {
+       
+        $this->db->delete('tbl_pemakaian_bahan', ['id_pemakaian' => $id_pemakaian]);
+    }
+
+
+
 }

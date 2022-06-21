@@ -67,11 +67,22 @@
 														}else{
 															$jum_pengadaan=$data_bahan->total_bahan;
 														}
-														$jum_pengadaan;
-														echo'<br>';
+
+                          $data_pemakaian_bahan=$this->M_bahan->tampil_alat_pakai_bahan($id_bahan)->row();
+													$jum_pemakaian='';
+													if(empty($data_pemakaian_bahan->total_pemakain)){
+														$jum_pemakaian='0';
+
+													}else{
+														$jum_pemakaian=$data_pemakaian_bahan->total_pemakain;
+													}	
+
+													
 														$a=$bahan->stok_awal;
 														$hasil=$a+$jum_pengadaan;
-														echo $hasil.' '.$bahan->satuan; ?>
+                            $hasil2=$hasil-$jum_pemakaian;
+
+														echo $hasil2.' '.$bahan->satuan; ?>
 												</td>
 												
 												</tr>

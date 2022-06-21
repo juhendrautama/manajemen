@@ -89,10 +89,10 @@ class Pbahan extends CI_Controller {
 
 	}
 	
-	public function hapus()
+	public function hapus($id_pemakaian)
 	{
-
-		echo "ini halaman tambah";
+		$this->M_pbahan->hapus($id_pemakaian);
+        redirect('pbahan');
 	}
 
 	
